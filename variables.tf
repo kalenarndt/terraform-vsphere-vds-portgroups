@@ -11,11 +11,14 @@ variable "vds" {
 
 variable "network" {
   type = map(object({
-    name             = string
-    type             = optional(string)
-    description      = optional(string)
-    vlan_id          = optional(number)
-    vlan_range       = optional(map(map(any)))
+    name        = string
+    type        = optional(string)
+    description = optional(string)
+    vlan_id     = optional(number)
+    vlan_range = optional(map(object({
+      max_vlan = number
+      min_vlan = number
+    })))
     promiscious      = optional(bool)
     mac_changes      = optional(bool)
     forged_transmits = optional(bool)
