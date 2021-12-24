@@ -1,7 +1,7 @@
 module "cts_networks" {
   source     = "kalenarndt/vds-portgroups/vsphere"
   datacenter = "Black Mesa"
-  vds        = "Sector-F-VDS"
+  vds        = "Sector-F-DVS"
   network = {
     "cts-dev" = {
       name    = "cts-dev"
@@ -16,6 +16,6 @@ module "cts_networks" {
           min_vlan = 300
         }
       }
-    },
+    }
   }
 }
